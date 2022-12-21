@@ -24,12 +24,12 @@ body {
   color: $very-dark-violet;
   font-family: 'SpaceGrotesk', sans-serif;
   font-size: $font-small;
-  font-weight: 500;
 }
 
 h1 {
   color: $white;
   font-size: $font-xlarge;
+  letter-spacing: 0.55rem;
 }
 
 h2 {
@@ -45,6 +45,11 @@ h3 {
 .card__text {
   color: $white;
   font-size: $font-medium;
+  text-transform: uppercase;
+
+  &--cvv {
+    color: $light-grayish-violet;
+  }
 }
 
 .input__text {
@@ -64,6 +69,7 @@ h3 {
 @media (max-width: $mobile-break) {
   h1 {
     font-size: $font-large;
+    letter-spacing: 0.3rem;
   }
 
   .card__text {

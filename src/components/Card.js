@@ -5,9 +5,10 @@ import bgMobile from '../img/bg-main-mobile.png'
 import bgDesktop from '../img/bg-main-desktop.png'
 import cardFront from '../img/bg-card-front.png'
 import cardBack from '../img/bg-card-back.png'
+import CardLogo from '../img/card-logo.svg'
 
 function Card() {
-  const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
+  const isMobile = useMediaQuery({ query: '(max-width: 1300px)' })
 
   return (
     <section
@@ -23,13 +24,18 @@ function Card() {
           className='card__customer card__customer--front'
           style={{ backgroundImage: `url(${cardFront})` }}
         >
-          <h1>FRONT</h1>
+          <CardLogo />
+          <h1>0000 0000 0000 0000</h1>
+          <div className='card__name'>
+            <p className='card__text'>Hank Hill</p>
+            <p className='card__text'>04/20</p>
+          </div>
         </div>
         <div
           className='card__customer card__customer--back'
           style={{ backgroundImage: `url(${cardBack})` }}
         >
-          <h1>BACK</h1>
+          <p className='card__text--cvv'>666</p>
         </div>
       </div>
     </section>
