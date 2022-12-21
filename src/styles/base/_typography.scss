@@ -1,0 +1,66 @@
+// font sizes
+$font-body-small: 1.3rem;
+$font-body-medium: 1.5rem;
+$font-heading-small: 1.8rem;
+$font-heading-medium: 2.4rem;
+$font-heading-large: 3.2rem;
+
+// @font-face {
+//     font-family: 'Raleway';
+//     src: url('../fonts/Raleway-Regular.eot');
+//     src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Raleway-Regular.woff2') format('woff2'),
+//         url('../fonts/Raleway-Regular.woff') format('woff'),
+//         url('../fonts/Raleway-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// @font-face {
+//     font-family: 'Righteous';
+//     src: url('../fonts/Righteous-Regular.eot');
+//     src: url('../fonts/Righteous-Regular.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Righteous-Regular.woff2') format('woff2'),
+//         url('../fonts/Righteous-Regular.woff') format('woff'),
+//         url('../fonts/Righteous-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// font settings
+
+body {
+  color: $dark-blue;
+  font-family: 'Outfit', sans-serif;
+  font-size: $font-body-medium;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: $font-heading-large;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: $font-heading-medium;
+}
+
+.heading-medium {
+  font-size: $font-heading-medium;
+}
+
+h3 {
+  font-size: $font-heading-medium;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: $font-heading-small;
+  font-weight: 500;
+}
+
+.font-small {
+  font-size: $font-body-small;
+}
