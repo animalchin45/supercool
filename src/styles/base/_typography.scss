@@ -1,66 +1,72 @@
 // font sizes
-$font-body-small: 1.3rem;
-$font-body-medium: 1.5rem;
-$font-heading-small: 1.8rem;
-$font-heading-medium: 2.4rem;
-$font-heading-large: 3.2rem;
+$font-xsmall: 0.9rem;
+$font-small: 1.2rem;
+$font-medium: 1.4rem;
+$font-large: 1.8rem;
+$font-xlarge: 2.8rem;
 
-// @font-face {
-//     font-family: 'Raleway';
-//     src: url('../fonts/Raleway-Regular.eot');
-//     src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
-//         url('../fonts/Raleway-Regular.woff2') format('woff2'),
-//         url('../fonts/Raleway-Regular.woff') format('woff'),
-//         url('../fonts/Raleway-Regular.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: 'Righteous';
-//     src: url('../fonts/Righteous-Regular.eot');
-//     src: url('../fonts/Righteous-Regular.eot?#iefix') format('embedded-opentype'),
-//         url('../fonts/Righteous-Regular.woff2') format('woff2'),
-//         url('../fonts/Righteous-Regular.woff') format('woff'),
-//         url('../fonts/Righteous-Regular.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../fonts/SpaceGrotesk-Medium.eot');
+  src: url('../fonts/SpaceGrotesk-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/SpaceGrotesk-Medium.woff2') format('woff2'),
+    url('../fonts/SpaceGrotesk-Medium.woff') format('woff'),
+    url('../fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 // font settings
 
 body {
-  color: $dark-blue;
-  font-family: 'Outfit', sans-serif;
-  font-size: $font-body-medium;
-  font-weight: 300;
+  color: $very-dark-violet;
+  font-family: 'SpaceGrotesk', sans-serif;
+  font-size: $font-small;
+  font-weight: 500;
 }
 
 h1 {
-  font-size: $font-heading-large;
-  font-weight: 300;
+  color: $white;
+  font-size: $font-xlarge;
 }
 
 h2 {
-  font-size: $font-heading-medium;
-}
-
-.heading-medium {
-  font-size: $font-heading-medium;
+  color: $very-dark-violet;
+  font-size: $font-xlarge;
 }
 
 h3 {
-  font-size: $font-heading-medium;
-  font-weight: 500;
+  color: $dark-grayish-violet;
+  font-size: $font-large;
 }
 
-h4 {
-  font-size: $font-heading-small;
-  font-weight: 500;
+.card__text {
+  color: $white;
+  font-size: $font-medium;
 }
 
-.font-small {
-  font-size: $font-body-small;
+.input__text {
+  font-size: $font-large;
+}
+
+.input__text--placeholder {
+  color: $dark-grayish-violet;
+  font-size: $font-large;
+}
+
+.btn {
+  color: $white;
+  font-size: $font-large;
+}
+
+@media (max-width: $mobile-break) {
+  h1 {
+    font-size: $font-large;
+  }
+
+  .card__text {
+    font-size: $font-xsmall;
+  }
 }

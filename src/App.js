@@ -1,11 +1,14 @@
 import React from 'react'
 
+import Card from './components/Card'
+import Form from './components/Form'
+
 function App() {
   return (
-    <div>
-      <h1>ReactJS Template</h1>
-      <h2>React-hook-form installed...</h2>
-    </div>
+    <main className='main'>
+      <Card />
+      <Form />
+    </main>
   )
 }
 

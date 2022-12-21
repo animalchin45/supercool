@@ -1,0 +1,48 @@
+.card {
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+
+  &__container {
+    display: grid;
+    height: 52.7rem;
+    grid-gap: $space-xl;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 34%;
+    width: 54.1rem;
+  }
+
+  &__customer {
+    border: none;
+    border-radius: 1rem;
+    height: 24.5rem;
+    overflow: hidden;
+    width: 44.7rem;
+
+    &--front {
+      //   background-image: url('../img/bg-card-front.png');
+    }
+
+    &--back {
+      //   background-image: url('../img/bg-card-back.png');
+      margin-left: 9.4rem;
+    }
+  }
+}
+
+@media (max-width: $mobile-break) {
+  .card {
+    min-height: 100%;
+  }
+}
+
+@media (min-width: $large-break) {
+  .card {
+    &__container {
+      margin-left: 55%;
+    }
+  }
+}
