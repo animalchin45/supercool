@@ -26,6 +26,7 @@
     height: 24.5rem;
     overflow: hidden;
     position: relative;
+    transition: transform $fade ease-in-out;
     width: 44.7rem;
 
     &--front {

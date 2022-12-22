@@ -4,23 +4,37 @@ function Form() {
   return (
     <section className='form'>
       <form className='form__container'>
-        <div>
+        <div className='form__standard'>
           <p>Cardholder Name</p>
-          <input placeholder='e.g. Hank Hill' />
+          <input className='form__input' placeholder='e.g. Hank Hill' />
         </div>
-        <div>
+        <div className='form__standard'>
           <p>Card Number</p>
-          <input placeholder='e.g. 1234 5678 9123 000' />
+          <input
+            className='form__input'
+            placeholder='e.g. 1234 5678 9123 000'
+          />
+        </div>
+        <div className='form__extra'>
+          <p className='form__extra__exp'>Exp. Date (MM/YY)</p>
+          <input
+            className='form__input form__extra__exp--mm'
+            placeholder='MM'
+          />
+          <input
+            className='form__input form__extra__exp--yy'
+            placeholder='YY'
+          />
+          <p className='form__extra__cvc'>CVC</p>
+          <input
+            className='form__input form__extra__cvc--cvc'
+            placeholder='e.g. 123'
+          />
         </div>
         <div>
-          <p>Exp. Date (MM/YY)</p>
-          <input placeholder='MM' />
-          <input placeholder='YY' />
-          <p>CVV</p>
-          <input placeholder='e.g. 123' />
-        </div>
-        <div>
-          <button>Confirm</button>
+          <button className='btn' type='submit'>
+            Confirm
+          </button>
         </div>
       </form>
     </section>
