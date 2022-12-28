@@ -1,6 +1,23 @@
 import React from 'react'
 
-function Form() {
+function Form({ cardNumber, setCardNumber, displayNumber, setDisplayNumber }) {
+  const handleNumberOnChange = (e) => {
+    if (e.target.value.length === 17) {
+      return null
+    }
+
+    setCardNumber(e.target.value)
+
+    const numberSplit = e.target.value.split('')
+    for (let i = e.target.value.length; i < 16; i++) {
+      numberSplit.push('0')
+    }
+
+    setDisplayNumber(numberSplit)
+  }
+
+  const handleCardOnChange = (e) => {}
+
   return (
     <section className='form'>
       <form className='form__container'>
@@ -12,7 +29,12 @@ function Form() {
           <p>Card Number</p>
           <input
             className='form__input'
-            placeholder='e.g. 1234 5678 9123 000'
+            placeholder='e.g. 1234 5678 9123 0000'
+            type='number'
+            maxLength={16}
+            pattern='[0-9]{10}'
+            onChange={handleNumberOnChange}
+            value={cardNumber}
           />
         </div>
         <div className='form__extra'>
