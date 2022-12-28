@@ -7,7 +7,7 @@ function App() {
   const [newCard, setNewCard] = useState({
     name: '',
     expMM: '',
-    expDD: '',
+    expYY: '',
     cvc: '',
   })
   const [cardNumber, setCardNumber] = useState('')
@@ -19,6 +19,7 @@ function App() {
     <main className='main'>
       <Card displayNumber={displayNumber} newCard={newCard} />
       <Form
+        newCard={newCard}
         setNewCard={setNewCard}
         cardNumber={cardNumber}
         setCardNumber={setCardNumber}

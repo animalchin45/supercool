@@ -80,6 +80,7 @@
 
       &--back {
         grid-row: 1 / 2;
+        transform: translateY(1.8rem);
 
         & p {
           transform: translate(22.5rem, 7.1rem);

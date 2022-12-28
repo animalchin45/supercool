@@ -7,8 +7,9 @@ import cardFront from '../img/bg-card-front.png'
 import cardBack from '../img/bg-card-back.png'
 import CardLogo from '../img/card-logo.svg'
 
-function Card({ displayNumber }) {
+function Card({ displayNumber, newCard }) {
   const isMobile = useMediaQuery({ query: '(max-width: 1300px)' })
+  const { name, expMM, expYY, cvc } = newCard
 
   return (
     <section
@@ -31,15 +32,17 @@ function Card({ displayNumber }) {
             .slice(12, 16)
             .join('')}`}</h1>
           <div className='card__name'>
-            <p className='card__text'>Hank Hill</p>
-            <p className='card__text'>04/20</p>
+            <p className='card__text'>{name === '' ? 'Hank Hill' : name}</p>
+            <p className='card__text'>
+              {(expMM || expYY) === '' ? 'XX/XX' : `${expMM}/${expYY}`}
+            </p>
           </div>
         </div>
         <div
           className='card__customer card__customer--back'
           style={{ backgroundImage: `url(${cardBack})` }}
         >
-          <p className='card__text--cvv'>666</p>
+          <p className='card__text--cvv'>{cvc === '' ? '666' : cvc}</p>
         </div>
       </div>
     </section>
