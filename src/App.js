@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Card from './components/Card'
 import Form from './components/Form'
+import FormComplete from './components/FormComplete'
 
 function App() {
   const [newCard, setNewCard] = useState({
@@ -14,18 +15,30 @@ function App() {
   const [displayNumber, setDisplayNumber] = useState([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   ])
+  const [complete, setComplete] = useState(false)
 
   return (
     <main className='main'>
       <Card displayNumber={displayNumber} newCard={newCard} />
-      <Form
-        newCard={newCard}
-        setNewCard={setNewCard}
-        cardNumber={cardNumber}
-        setCardNumber={setCardNumber}
-        displayNumber={displayNumber}
-        setDisplayNumber={setDisplayNumber}
-      />
+      {!complete && (
+        <Form
+          newCard={newCard}
+          setNewCard={setNewCard}
+          cardNumber={cardNumber}
+          setCardNumber={setCardNumber}
+          displayNumber={displayNumber}
+          setDisplayNumber={setDisplayNumber}
+          setComplete={setComplete}
+        />
+      )}
+      {complete && (
+        <FormComplete
+          setCardNumber={setCardNumber}
+          setNewCard={setNewCard}
+          setDisplayNumber={setDisplayNumber}
+          setComplete={setComplete}
+        />
+      )}
     </main>
   )
 }

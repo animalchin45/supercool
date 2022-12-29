@@ -42,7 +42,7 @@ function Card({ displayNumber, newCard }) {
           className='card__customer card__customer--back'
           style={{ backgroundImage: `url(${cardBack})` }}
         >
-          <p className='card__text--cvv'>{cvc === '' ? '666' : cvc}</p>
+          <p className='card__text--cvv'>{cvc === '' ? '123' : cvc}</p>
         </div>
       </div>
     </section>
