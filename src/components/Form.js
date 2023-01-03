@@ -43,21 +43,25 @@ function Form({
     <section className='form'>
       <form className='form__container' onSubmit={handleSubmit(handleOnSubmit)}>
         <div className='form__standard'>
-          <p>Cardholder Name</p>
+          <p>CARDHOLDER NAME</p>
           <input
             className='form__input'
+            style={errors.name && { border: '1px solid rgb(255, 82, 82)' }}
             placeholder='e.g. Hank Hill'
             type='text'
             {...register('name', { required: true })}
             onChange={handleCardOnChange}
             value={newCard.name}
           />
-          {errors.name && <p>Please enter a name</p>}
+          {errors.name && <p className='form__error'>Please enter a name</p>}
         </div>
         <div className='form__standard'>
-          <p>Card Number</p>
+          <p>CARD NUMBER</p>
           <input
             className='form__input'
+            style={
+              errors.cardNumber && { border: '1px solid rgb(255, 82, 82)' }
+            }
             placeholder='e.g. 1234 5678 9123 0000'
             type='number'
             pattern='[0-9]{10}'
@@ -65,12 +69,17 @@ function Form({
             onChange={handleNumberOnChange}
             value={cardNumber}
           />
-          {errors.cardNumber && <p>Required</p>}
+          {errors.cardNumber && <p className='form__error'>Required</p>}
         </div>
         <div className='form__extra'>
-          <p className='form__extra__exp'>Exp. Date (MM/YY)</p>
+          <p className='form__extra__exp'>EXP. DATE(MM/YY)</p>
           <input
             className='form__input form__extra__exp--mm'
+            style={
+              (errors.expMM || errors.expYY) && {
+                border: '1px solid rgb(255, 82, 82)',
+              }
+            }
             placeholder='MM'
             {...register('expMM', { required: true })}
             onChange={handleCardOnChange}
@@ -78,21 +87,35 @@ function Form({
           />
           <input
             className='form__input form__extra__exp--yy'
+            style={
+              (errors.expMM || errors.expYY) && {
+                border: '1px solid rgb(255, 82, 82)',
+              }
+            }
             placeholder='YY'
             {...register('expYY', { required: true })}
             onChange={handleCardOnChange}
             value={newCard.expYY}
           />
-          {(errors.expMM || errors.expYY) && <p>Can't be blank</p>}
+          {(errors.expMM || errors.expYY) && (
+            <p className='form__error form__extra__error--exp'>
+              Can't be blank
+            </p>
+          )}
           <p className='form__extra__cvc'>CVC</p>
           <input
             className='form__input form__extra__cvc--cvc'
+            style={errors.cvc && { border: '1px solid rgb(255, 82, 82)' }}
             placeholder='e.g. 123'
             {...register('cvc', { required: true })}
             onChange={handleCardOnChange}
             value={newCard.cvc}
           />
-          {errors.cvc && <p>Can't be blank</p>}
+          {errors.cvc && (
+            <p className='form__error form__extra__error--cvc'>
+              Can't be blank
+            </p>
+          )}
         </div>
         <div>
           <button className='btn' type='submit'>

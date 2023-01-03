@@ -52,6 +52,13 @@ h3 {
   }
 }
 
+.form {
+  &__error {
+    color: $red;
+    font-size: $font-small;
+  }
+}
+
 .input__text {
   font-size: $font-large;
 }
