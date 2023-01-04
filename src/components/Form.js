@@ -65,7 +65,7 @@ function Form({
             placeholder='e.g. 1234 5678 9123 0000'
             type='number'
             pattern='[0-9]{10}'
-            {...register('cardNumber', { required: true })}
+            {...register('cardNumber', { required: true, minLength: 16 })}
             onChange={handleNumberOnChange}
             value={cardNumber}
           />
